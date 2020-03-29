@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<style type="text/css">
+		/* DATA-WORDS Loop/swap words in sentence */
+		[data-words] {
+		  vertical-align: top;
+		  position: static;
+		}
+		[data-words] > span {
+		  display: none;
+		  position: absolute;
+		  color: #0bf;
+		}
+	</style>
  
     <title>Jade Dak</title>
 </head>
@@ -52,9 +64,14 @@
                 <span class="word belize">wonderful.</span>
               </p>
             </div>
+	    
+	    
+	    
         <div class="starter-template ">            
             <p class="lead"> &nbsp;</p><br>
-		
+		<p>
+  This is <span data-words="some|an interesting|some longer">some</span> text
+</p>
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" 
                  style="width: 800px; height: 600px; margin-top: 50px;">
             <div class="carousel-inner">
@@ -95,10 +112,26 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="custom.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
         <script type="text/JavaScript">
-          //  swal("Jade Dak", "...I am from Beawar, India");
+		  $("[data-words]").attr("data-words", function(i, words) {
+
+	    var $self = $(this).text(""),
+		words = words.split("|"),
+		tot   = words.length,
+		c     = 0; 
+
+	    for(var i=0; i<tot; i++) $self.append($('<span/>',{text:words[i]}));
+
+	    var $words = $self.find("span");
+
+	    (function loop(){
+	      $self.animate({ width: $words.eq( c ).width() });
+	      $words.stop().fadeOut().eq(c).fadeIn().delay(1000).show(0, loop);
+	      c = ++c % tot;
+	    }());
+
+	});
         </script>
 </body>
 </html>
