@@ -26,7 +26,7 @@ body{
 	position: absolute;
 	opacity: 0;
 	overflow: hidden;
-	color: #6b969d;
+	color: #0000FF;
 	-webkit-animation: rotateWord 18s linear infinite 0s;
 	-ms-animation: rotateWord 18s linear infinite 0s;
 	animation: rotateWord 18s linear infinite 0s;
