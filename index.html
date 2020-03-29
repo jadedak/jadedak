@@ -6,19 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<style type="text/css">
-		/* DATA-WORDS Loop/swap words in sentence */
-		[data-words] {
-		  vertical-align: top;
-		  position: static;
-		}
-		[data-words] > span {
-		  display: none;
-		  position: absolute;
-		  color: #0bf;
-		}
-	</style>
- 
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <style>
+			.no-cssanimations .rw-wrapper .rw-sentence span:first-child{
+				opacity: 1;
+			} 
+		</style>
     <title>Jade Dak</title>
 </head>
 <body>
@@ -43,35 +36,29 @@
                 <li class="nav-item">
                     <a class="nav-link" href="https://github.com/jadedak/jadedak/edit/master/index.html">Edit</a>
                 </li>
-
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <div class="text-white">Designed by Jade Dak</div>
             </form>
         </div>
     </nav>
-	
 
     <main role="main" class="container" style="margin-top: 80px;"  >
 	    	<div style="margin-top: 80px;"></div>
-            <div class="text">
-              <p>Jade is</p>
-              <p>
-                <span class="word pomegranate">budding programmer.</span>
-                <span class="word green">9th student from Mangal Newton School.</span>
-                <span class="word midnight"> from Beawar, India</span>
-                <span class="word wisteria">witty</span>
-                <span class="word belize">wonderful.</span>
-              </p>
-            </div>
-	    
-	    
-	    
-        <div class="starter-template ">            
-            <p class="lead"> &nbsp;</p><br>
-		<p>
-  This is <span data-words="some|an interesting|some longer">some</span> text
-</p>
+        <div class="starter-template ">          
+
+			<section class="rw-wrapper">
+				<h4 class="rw-sentence">
+					<span>Jade is </span>
+					<div class="rw-words rw-words-1">
+						<span>budding programmer.</span>
+						<span>9th student</span>
+						<span>from Beawar, India</span>
+						<span>study at Mangal Newton School.</span>
+					</div>
+				</h4>
+			</section>
+			
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" 
                  style="width: 800px; height: 600px; margin-top: 50px;">
             <div class="carousel-inner">
