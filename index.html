@@ -86,13 +86,13 @@ function changeWord() {
 
 function animateLetterOut(cw, i) {
   setTimeout(function() {
-		cw[i].className = 'letter out';
+  cw[i].className = 'letter out';
   }, i*80);
 }
 
 function animateLetterIn(nw, i) {
   setTimeout(function() {
-		nw[i].className = 'letter in';
+  nw[i].className = 'letter in';
   }, 340+(i*80));
 }
 
@@ -147,13 +147,8 @@ setInterval(changeWord, 4000);
             </form>
         </div>
     </nav>
-
-    <main role="main" class="container" style="margin-top: 80px;">
-
-        <div class="starter-template">    
-            
-            <p class="lead"> &nbsp;</p><br> 
-              
+	<hr>
+	<div style="margin-top: 80px;"></div>
             <div class="text">
               <h2>Jade is</h2>
               <h2>
@@ -164,7 +159,10 @@ setInterval(changeWord, 4000);
                 <span class="word belize">wonderful.</span>
               </h2>
             </div>
-            
+    <main role="main" class="container" style="margin-top: 80px;">
+        <div class="starter-template">            
+            <p class="lead"> &nbsp;</p><br>
+		
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" 
                  style="width: 800px; height: 600px; margin-top: 50px;">
             <div class="carousel-inner">
